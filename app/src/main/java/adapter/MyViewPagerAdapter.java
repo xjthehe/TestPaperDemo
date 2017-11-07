@@ -25,7 +25,6 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-//        BaseFragment paperFragement= FragmentFactory.creatFragment(0);
         return new PaperFragement(position);
     }
 
