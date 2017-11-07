@@ -38,7 +38,6 @@ public class MainActivity extends BaseActivity {
         mFm=getSupportFragmentManager();
         mFViewPager=(ViewPager) findViewById(R.id.viewpager);
         myViewPagerAdapter =new MyViewPagerAdapter(getSupportFragmentManager(),listEntities);
-        mFViewPager.setAdapter(myViewPagerAdapter);
     }
 
     /**
@@ -66,6 +65,7 @@ public class MainActivity extends BaseActivity {
      */
     private void parsed(Response<TestPaperBean> response) {
         listEntities=response.body().getList();
+        mFViewPager.setAdapter(myViewPagerAdapter);
         myViewPagerAdapter.notifyDataSetChanged();
 
     }
