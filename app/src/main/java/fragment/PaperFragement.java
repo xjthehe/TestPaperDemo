@@ -4,17 +4,13 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.itcast.yb.testpaperdemo.R;
-
 import java.util.List;
-
 import bean.TestPaperBean;
 import http.HttpUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 /**
  * Created by lenovo on 2017/11/7.
  */
@@ -22,11 +18,11 @@ import retrofit2.Response;
 public class PaperFragement extends BaseFragment{
     private TextView mtextview;
     private List<TestPaperBean.ListEntity> listEntities;
-    private int position;
+    private int mposition;
     public PaperFragement(int position) {
         super(position);
+        mposition=position;
     }
-
 
     @Override
     public View initView() {
@@ -52,7 +48,8 @@ public class PaperFragement extends BaseFragment{
 
     private void parsed(Response<TestPaperBean> response) {
         listEntities=response.body().getList();
-        mtextview.setText(listEntities.get(0).toString());
+        TestPaperBean.ListEntity listEntity=listEntities.get(mposition);
+        mtextview.setText(listEntity.getId()+"---"+listEntity.getTopic()+"---"+listEntity.getCondition());
     }
 
 //    /**
