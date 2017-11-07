@@ -1,5 +1,6 @@
 package adapter;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,6 +17,7 @@ import fragment.PaperFragement;
  */
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
     List<TestPaperBean.ListEntity> mlist;
+    Context mcontext;
     public MyViewPagerAdapter(FragmentManager fm, List<TestPaperBean.ListEntity> list){
         super(fm);
         mlist=list;

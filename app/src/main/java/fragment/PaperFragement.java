@@ -18,7 +18,7 @@ import retrofit2.Response;
 public class PaperFragement extends BaseFragment{
     private TextView mtextview;
     private List<TestPaperBean.ListEntity> listEntities;
-    private int mposition;
+    public int mposition;
     public PaperFragement(int position) {
         super(position);
         mposition=position;
