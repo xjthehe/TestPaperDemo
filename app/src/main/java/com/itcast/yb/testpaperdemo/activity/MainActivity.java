@@ -26,6 +26,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initData();
         //初始导入
         initBasic();
     }
@@ -36,34 +37,32 @@ public class MainActivity extends BaseActivity {
     private void initBasic() {
         mFm=getSupportFragmentManager();
         mFViewPager=(ViewPager) findViewById(R.id.viewpager);
-        myViewPagerAdapter =new MyViewPagerAdapter(getSupportFragmentManager(),listEntities);
+        myViewPagerAdapter =new MyViewPagerAdapter(mFm,listEntities);
         mFViewPager.setAdapter(myViewPagerAdapter);
+        myViewPagerAdapter.notifyDataSetChanged();
     }
 
     /**
      * 获取请求数据
      */
     private void initData() {
-//        HttpUtils.creat().queryTestPaper().enqueue(new Callback<TestPaperBean>() {
-//            @Override
-//            public void onResponse(Call<TestPaperBean> call, Response<TestPaperBean> response) {
-//                parsed(response);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<TestPaperBean> call, Throwable t) {
-//
-//            }
-//        });
+        HttpUtils.creat().queryTestPaper().enqueue(new Callback<TestPaperBean>() {
+            @Override
+            public void onResponse(Call<TestPaperBean> call, Response<TestPaperBean> response) {
+                parsed(response);
+            }
+
+            @Override
+            public void onFailure(Call<TestPaperBean> call, Throwable t) {
+
+            }
+        });
     }
 
-//    /**
-//     * 解析数据
-//     */
-//    private void parsed(Response<TestPaperBean> response) {
-//        listEntities=response.body().getList();
-//        mFViewPager.setAdapter(myViewPagerAdapter);
-//        myViewPagerAdapter.notifyDataSetChanged();
-//
-//    }
+    /**
+     * 解析数据
+     */
+    private void parsed(Response<TestPaperBean> response) {
+        listEntities=response.body().getList();
+    }
 }
