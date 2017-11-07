@@ -9,6 +9,7 @@ import java.util.List;
 import bean.TestPaperBean;
 import fragment.BaseFragment;
 import fragment.FragmentFactory;
+import fragment.PaperFragement;
 
 /**
  * Created by lenovo on 2017/11/7.
@@ -22,8 +23,8 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        BaseFragment paperFragement= FragmentFactory.creatFragment(0);
-        return paperFragement;
+//        BaseFragment paperFragement= FragmentFactory.creatFragment(0);
+        return new PaperFragement(position);
     }
 
     @Override
