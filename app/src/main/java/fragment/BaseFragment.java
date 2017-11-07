@@ -13,6 +13,12 @@ import android.view.ViewGroup;
  */
 public abstract class BaseFragment extends Fragment {
     public Activity mActivity;
+    int position;
+
+    public  BaseFragment(int position) {
+        this.position = position;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

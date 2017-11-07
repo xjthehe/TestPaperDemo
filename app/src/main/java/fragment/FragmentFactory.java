@@ -13,7 +13,7 @@ public class FragmentFactory {
         if(fragment==null){
             switch (position){
                 case 0:
-                BaseFragment pagerFragement=new PaperFragement();
+                BaseFragment pagerFragement=new PaperFragement(position);
                     break;
                 case 1:
                     break;
