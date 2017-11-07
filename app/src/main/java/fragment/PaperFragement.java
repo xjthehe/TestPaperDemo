@@ -19,12 +19,14 @@ import retrofit2.Response;
 @SuppressLint("ValidFragment")
 public class PaperFragement extends BaseFragment {
     private TextView mtextview;
+    private  ViewPager viewPager;
     private List<TestPaperBean.ListEntity> listEntities;
     public int mposition;
 
-    public PaperFragement(int position) {
+    public PaperFragement(int position,ViewPager viewPager) {
         super(position);
         mposition = position;
+        viewPager=viewPager;
     }
 
     @Override
