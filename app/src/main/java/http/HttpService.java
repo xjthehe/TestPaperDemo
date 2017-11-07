@@ -8,7 +8,7 @@ import retrofit2.http.GET;
  * Created by lenovo on 2017/11/7.
  */
 public interface HttpService {
-    @GET("/firstcomment/list1.json")
+    @GET("list1.json")
     Call<TestPaperBean> queryTestPaper();
 
 }

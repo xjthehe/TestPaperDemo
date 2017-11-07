@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class HttpUtils {
     //http://192.168.1.25:8080/firstcomment/list
-    public static final String BASE_URL="http://192.168.1.25:8080";
+    public static final String BASE_URL="http://192.168.1.25:8080/firstcomment/";
     private static HttpService mHttpService=null;
 
     public static  HttpService creat(){
