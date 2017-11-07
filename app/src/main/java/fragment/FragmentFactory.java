@@ -7,17 +7,24 @@ import java.util.Map;
  */
 public class FragmentFactory {
     private static Map<Integer,BaseFragment> map=new HashMap<>();
-
     public static BaseFragment creatFragment(int position){
         BaseFragment fragment=map.get(position);
         if(fragment==null){
             switch (position){
                 case 0:
-                BaseFragment pagerFragement=new PaperFragement(position);
+                    fragment=new PaperFragement(position);
                     break;
                 case 1:
+                    fragment=new PaperFragement(position);
                     break;
                 case 2:
+                    fragment=new PaperFragement(position);
+                    break;
+                case 3:
+                    fragment=new PaperFragement(position);
+                    break;
+                case 4:
+                    fragment=new PaperFragement(position);
                     break;
             }
         }

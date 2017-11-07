@@ -6,8 +6,6 @@ import android.support.v4.view.ViewPager;
 
 import com.itcast.yb.testpaperdemo.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import adapter.MyViewPagerAdapter;
@@ -28,7 +26,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initData();
         //初始导入
-        initBasic();
     }
 
     /**
@@ -64,5 +61,6 @@ public class MainActivity extends BaseActivity {
      */
     private void parsed(Response<TestPaperBean> response) {
         listEntities=response.body().getList();
+        initBasic();
     }
 }
