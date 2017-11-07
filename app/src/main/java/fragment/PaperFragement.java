@@ -1,6 +1,8 @@
 package fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -23,6 +25,12 @@ public class PaperFragement extends BaseFragment {
     public PaperFragement(int position) {
         super(position);
         mposition = position;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+//        CallBackValue callBackValue= (CallBackValue) getActivity();
     }
 
     @Override
@@ -53,4 +61,9 @@ public class PaperFragement extends BaseFragment {
         mtextview.setText(listEntity.getId() + "---" + listEntity.getTopic() + "---" + listEntity.getCondition());
     }
 
+
+//    //定义一个回调接口
+//    public interface CallBackValue{
+//        public void SendMessageValue(ViewPager viewPager);
+//    }
 }

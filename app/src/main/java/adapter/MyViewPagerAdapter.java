@@ -4,12 +4,8 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import java.util.List;
-
 import bean.TestPaperBean;
-import fragment.BaseFragment;
-import fragment.FragmentFactory;
 import fragment.PaperFragement;
 
 /**
@@ -22,6 +18,7 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         mlist=list;
     }
+
 
     @Override
     public Fragment getItem(int position) {
