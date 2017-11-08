@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+
 import java.util.List;
 import bean.TestPaperBean;
 import fragment.PaperFragement;
@@ -13,20 +15,22 @@ import fragment.PaperFragement;
  */
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
     List<TestPaperBean.ListEntity> mlist;
+    private ViewPager mviewPager;
     Context mcontext;
-    public MyViewPagerAdapter(FragmentManager fm, List<TestPaperBean.ListEntity> list){
+    public MyViewPagerAdapter(FragmentManager fm, List<TestPaperBean.ListEntity> list, ViewPager viewPager){
         super(fm);
         mlist=list;
+        mviewPager=viewPager;
     }
 
 
     @Override
     public Fragment getItem(int position) {
-        return new PaperFragement(position);
+        return new PaperFragement(position,mviewPager);
     }
 
     @Override
-    public int getCount() {
+    public int getCount(){
         return mlist==null?0:mlist.size();
     }
 }

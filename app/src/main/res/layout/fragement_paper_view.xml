@@ -1,12 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/tv_content_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1."
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/tv_content_id"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="100dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_a"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_topic"
+        android:background="@android:color/holo_red_dark">
+
+        <TextView
+            android:id="@+id/tv_flag_a"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="A"/>
+        <TextView
+            android:id="@+id/tv_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11111111111111"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_b"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_a"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_dark">
+
+        <TextView
+            android:id="@+id/tv_flag_b"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="B"/>
+        <TextView
+            android:id="@+id/tv_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11111111111111"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_c"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_b"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_dark">
+
+        <TextView
+            android:id="@+id/tv_flag_c"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="c"/>
+
+        <TextView
+            android:id="@+id/tv_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11111111111111"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_d"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_c"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_dark">
+
+        <TextView
+            android:id="@+id/tv_flag_d"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="d"/>
+
+        <TextView
+            android:id="@+id/tv_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11111111111111"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_rever"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="30dp"
+        android:text="上一页"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/btn_rever"
+        android:layout_alignBaseline="@id/btn_rever"
+        android:layout_marginLeft="10dp"
+        android:text="下一页"/>
+
+</RelativeLayout>
