@@ -36,7 +36,6 @@ public class MainActivity extends BaseActivity {
         mFViewPager=(ViewPager) findViewById(R.id.viewpager);
         myViewPagerAdapter =new MyViewPagerAdapter(mFm,listEntities,mFViewPager);
         mFViewPager.setAdapter(myViewPagerAdapter);
-        myViewPagerAdapter.notifyDataSetChanged();
     }
 
     /**

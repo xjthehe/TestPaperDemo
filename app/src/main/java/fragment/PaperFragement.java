@@ -1,4 +1,5 @@
 package fragment;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -7,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.itcast.yb.testpaperdemo.R;
+
 import java.util.List;
+
 import bean.TestPaperBean;
 import http.HttpUtils;
 import retrofit2.Call;
@@ -79,8 +83,11 @@ public class PaperFragement extends BaseFragment implements View.OnClickListener
     private void parsed(Response<TestPaperBean> response) {
         listEntities = response.body().getList();
         TestPaperBean.ListEntity listEntity = listEntities.get(mposition);
-        tv_content_id.setText(listEntity.getId());
+        tv_content_id.setText(listEntity.getId()+"");
         tv_topic.setText(listEntity.getTopic());
+
+        //选项数据。
+//        ((TextView)ll_a.findViewById(R.id.tv_a)).setText();
     }
 
     @Override
